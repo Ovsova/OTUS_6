@@ -1,0 +1,21 @@
+{% extends 'blog_app/base.html' %}
+
+{% block title %}Товары по категориям{{ category.name }}{% endblock %}
+
+{% block content %}
+        <h1>Товары по категориям {{ category.name }}</h1>
+
+        <ul class="list-group">
+            {% for product in products %}
+            <li class="list-group-item">
+                <h5>{{ product.name }}</h5>
+                <p>{{ product.description }}></p>
+                <small>Категория {{ product.category.name }}</small>
+                <small>| Цена {{ product.price }}</small>
+            </li>
+            {% empty %}
+                 <li class="list-group-item">Нет товаров</li>
+            {% endfor %}
+
+        </ul>
+{% endblock %}
