@@ -11,7 +11,7 @@ def products_list(request):
     context = {
         'products': products
     }
-    return render(request, 'store_app.product_list.html', context=context)
+    return render(request, 'store_app/product_list.html', context=context)
 
 
 def category_list(request):
@@ -19,7 +19,7 @@ def category_list(request):
     context = {
         'category': category
     }
-    return render(request, 'store_app.category_list.html', context=context)
+    return render(request, 'store_app/category_list.html', context=context)
 
 def category_products(request, category_id):
     category = get_object_or_404(Category, id=category_id)
@@ -28,11 +28,11 @@ def category_products(request, category_id):
         'category': category,
         'products': products
     }
-    return render(request, 'store_app.category_products.html', context=context)
+    return render(request, 'store_app/category_products.html', context=context)
 
 def products_detail(request, product_id ):
     product = get_object_or_404(Product, id=product_id)
     context = {
         'product': product
     }
-    return render(request, 'store_app.products_detail.html', context=context)
+    return render(request, 'store_app/products_detail.html', context=context)

@@ -1,7 +1,13 @@
 {% extends 'store_app/base.html' %}
+{% load static %}
 
 {% block title %}Главная{% endblock %}
 
 {% block content %}
     <h2>Главная страница Магазина.</h2>
+    <div class="footer-image" style="margin-top: 30px; text-align: center;">
+         <img src="{% static 'images/main.jpg' %}"
+              alt="Игровой мем"
+              style="max-width: 100%">
+    </div>
 {% endblock %}

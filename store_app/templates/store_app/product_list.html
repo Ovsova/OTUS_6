@@ -7,8 +7,8 @@
         <ul class="list-group">
             {% for product in products %}
             <li class="list-group-item">
-                <a href="{% url 'post_detail' product.pk %}"><h5>{{ product.name }}</h5></a>
-                <p>{{ product.description }}></p>
+                <a href="{% url 'products_detail' product.pk %}"><h5>{{ product.name }}</h5></a>
+                <p>{{ product.description }}</p>
                 <small>Категория {{ product.category.name }}</small>
                 <small>| Цена {{ product.price }}</small>
             </li>

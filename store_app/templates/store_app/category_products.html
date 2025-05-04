@@ -1,4 +1,4 @@
-{% extends 'blog_app/base.html' %}
+{% extends 'store_app/base.html' %}
 
 {% block title %}Товары по категориям{{ category.name }}{% endblock %}
 
@@ -9,7 +9,7 @@
             {% for product in products %}
             <li class="list-group-item">
                 <h5>{{ product.name }}</h5>
-                <p>{{ product.description }}></p>
+                <p>{{ product.description }}</p>
                 <small>Категория {{ product.category.name }}</small>
                 <small>| Цена {{ product.price }}</small>
             </li>
