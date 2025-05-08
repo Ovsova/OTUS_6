@@ -5,9 +5,11 @@
 
 {% block content %}
     <h2>Главная страница Магазина.</h2>
+    <p><a href="{% url 'add_product'%}" class="btn btn-sm btn-warning"> Добавить товар </a></p>
     <div class="footer-image" style="margin-top: 30px; text-align: center;">
          <img src="{% static 'images/main.jpg' %}"
               alt="Игровой мем"
               style="max-width: 700px;">
+
     </div>
 {% endblock %}

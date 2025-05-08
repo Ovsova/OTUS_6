@@ -10,6 +10,8 @@
                 <a href="{% url 'category_products' category.pk %}"><h5>{{ category.name }}</h5></a>
                 <p>{{ category.description }}</p>
                 <small>Количество товаров по категории: {{ category.products.count }}</small>
+                <p>
+                <p><a href="{% url 'edit_category' category.id %}" class="btn-sm btn-warning"> Редактировать</a></p></p>
             </li>
             {% empty %}
                  <li class="list-group-item">Нет категорий</li>

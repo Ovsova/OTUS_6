@@ -10,5 +10,6 @@
         <p>{{ product.category.name }}</p>
         <small>Категория {{ product.created_at }}</small>
         <small>| Цена {{ product.price }}</small>
+        <p><a href="{% url 'edit_product' product.id %}" class="btn-sm btn-warning"> Редактировать</a></p>
 
 {% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'store_app/base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+        <h1>{{ name }}</h1>
+        <form method="post" class="mt-5">
+            {%csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="btn-primary" > Редактировать категорию  </button>
+
+        </form>
+
+
+{% endblock %}

@@ -11,6 +11,7 @@
                 <p>{{ product.description }}</p>
                 <small>Категория {{ product.category.name }}</small>
                 <small>| Цена {{ product.price }}</small>
+                <p><a href="{% url 'edit_product' product.id %}" class="btn-sm btn-warning"> Редактировать</a></p>
             </li>
             {% empty %}
                  <li class="list-group-item">Нет товаров</li>
