@@ -18,8 +18,8 @@ class ProductModelForm(forms.ModelForm):
 
     def clean_name(self):
         name = self.cleaned_data['name']
-        if len(name) < 10:
-            raise ValidationError('Название должно быть более 10 символов')
+        if len(name) < 5:
+            raise ValidationError('Название должно быть более 5 символов')
         return name
 
     def clean(self):
