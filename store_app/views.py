@@ -1,9 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse
+from  .tasks import send_notification_add_product
 from .models import Product, Category
 from .forms import ProductModelForm, CategoryModelForm
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from django.views.generic.base import TemplateView
 from django.urls import reverse_lazy
 from django.contrib import messages
 
@@ -63,6 +62,11 @@ class ProductCreateView(CreateView):
     success_url = reverse_lazy('products')
 
     def form_valid(self, form):
+        send_notification_add_product.delay(
+            recepient_email = 'fedko.liza@mail.ru',
+            subject = 'Новый товар добавлен',
+            message=f'Товар "{form.instance.name}" был успешно создан'
+        )
         messages.success(self.request, 'Продукт успешно добавлен')
         return super().form_valid(form)
 

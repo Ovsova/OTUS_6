@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Product, Category
-from django import forms
+from django_celery_beat.models import PeriodicTask, IntervalSchedule
 # Register your models here.
 
 @admin.register(Category)
