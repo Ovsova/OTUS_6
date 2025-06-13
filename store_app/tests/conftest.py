@@ -1,5 +1,14 @@
 import pytest
 from store_app.models import Category, Product
+from celery import Celery
+
+
+@pytest.fixture(autouse=True)
+def celery_config():
+    return {
+        'broker_url': 'memory://',
+        'result_backend': 'cache+memory://',
+    }
 
 
 @pytest.fixture
