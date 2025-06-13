@@ -152,3 +152,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HST_USER = 'fedko.liza@mail.ru'
 EMAIL_HOST_PASSWORD = 'jfGLgPB5jLhkY5sxyzfS'
+
+import sys
+if 'test' in sys.argv or 'pytest' in sys.argv[0]:
+    CELERY_BROKER_URL = 'memory://'
+    CELERY_RESULT_BACKEND = 'cache+memory://'
