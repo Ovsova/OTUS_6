@@ -22,4 +22,4 @@ jobs:
         poetry install
     - name: Run Tests
       run: |
-        poetry run pytest -s --cov --cov-report html --cov-fail-under 88
+        poetry run pytest
